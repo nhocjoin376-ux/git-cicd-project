@@ -1,8 +1,14 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("CI/CD + Render deploy SUCCESS");
+// Serve frontend
+app.use(express.static("public"));
+
+// Test API
+app.get("/api/health", (req, res) => {
+  res.json({ status: "OK", message: "Backend running" });
 });
 
 const PORT = process.env.PORT || 3000;
