@@ -20,5 +20,4 @@ jobs:
         run: echo "Test passed"
 
       - name: Deploy
-         run: echo "Deploy successfully"
-
+        run: echo "Deploy successfully"
